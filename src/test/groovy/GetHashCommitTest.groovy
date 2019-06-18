@@ -22,5 +22,6 @@ class GetCommitHashTest extends BasePipelineTest {
         // call getCommitHash and check result
         def result = getCommitHash()
         assertEquals "result:", hash, result
+        println result
     }
 }
