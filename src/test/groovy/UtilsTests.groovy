@@ -14,7 +14,8 @@ class UtilsTests extends BasePipelineTest {
 
     @Test
     void testCall() {
-        def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
+        //def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
+        def hash = "hello world"
 
         // create mock sh step
         //helper.registerAllowedMethod("utils.getCommitHash", []) { return hash }
@@ -22,6 +23,8 @@ class UtilsTests extends BasePipelineTest {
         // call getCommitHash and check result
         def result = utils.getCommitHash()
         //assertEquals "result:", hash, result
+
+        //printCallStack()
         println result
     }
 }
