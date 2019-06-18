@@ -4,5 +4,5 @@
 classs utils 
 def getCommitHash() {
     //return sh "git rev-parse HEAD"
-    return sh(returnStdout: true, script: "git rev-list --count HEAD")
+    return sh(returnStdout: true, script: "git rev-parse HEAD")
 }
