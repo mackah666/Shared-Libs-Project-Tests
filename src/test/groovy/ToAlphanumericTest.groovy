@@ -33,9 +33,9 @@ class ToAlphanumericTest extends BasePipelineTest {
    @Test
     void testThreeCall() {
         // call toAlphanumeric and check result
-        def result = toAlphanumeric(text: "mackah666")
+        def result = toAlphanumeric(text: "m@ackah6*6*6")
         printCallStack()
-        assertEquals "result:", "mackah", result
+        assertEquals "result:", "mackah666", result
         println result
     }
 }
