@@ -1,4 +1,5 @@
 node() {
+  //add stage
   stage('Checkout') {
     checkout scm
     sh 'git clean -xdf'

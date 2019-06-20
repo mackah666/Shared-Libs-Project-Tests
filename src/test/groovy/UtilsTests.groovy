@@ -18,7 +18,7 @@ class UtilsTests extends BasePipelineTest {
         def hash = "hello world"
 
         // create mock sh step
-        //helper.registerAllowedMethod("utils.getCommitHash", []) { return hash }
+        helper.registerAllowedMethod('utils.getCommitHash', [null]) { return '2345aef' }
 
         // call getCommitHash and check result
         def result = utils.getCommitHash()
