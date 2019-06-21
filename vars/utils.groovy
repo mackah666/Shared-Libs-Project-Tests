@@ -12,12 +12,20 @@ def getCommitHash() {
 }
 
 def getSemanticVersion() {
-    String fullSemVer sh(returnStdout: true, script: "gitversion /showvariable FullSemVer")
+    String fullSemVer = sh(returnStdout: true, script: "gitversion /showvariable FullSemVer")
     return fullSemVer
 }
 
 def sayHiToMackah() {
     return "hello mackah666"
+}
+
+
+def getBranchName() {
+    String branchName = sh(returnStdout: true, script: "gitversion /showvariable BranchName")
+        .trim()
+        .minus("origin/")
+     return branchName
 }
 
 

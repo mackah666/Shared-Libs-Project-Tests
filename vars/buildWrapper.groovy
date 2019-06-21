@@ -21,6 +21,11 @@ def call(Closure body) {
       sh 'docker -v'
     }
 
+    stage('get branch') {
+      // Test Python setup
+      utils.getBranchName()
+    }
+
     stage('Post') {
       // Print info of standard tools
       sh 'ls -al'

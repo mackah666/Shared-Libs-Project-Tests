@@ -29,8 +29,25 @@ class UtilsTests extends BasePipelineTest {
 
     }
 
+    @Test
+    void testUtilsgetBranchName() {
+        //def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
+        def branch = "develop"
 
-//getSemanticVersion
+        // create mock sh step
+        helper.registerAllowedMethod('getBranchName', []) { f -> return branch }
+
+        // call getCommitHash and check result
+        def result = utils.getCommitHash()
+        assertEquals "result:", branch, result
+
+        //printCallStack()
+        println "hello : $result"
+
+    }
+
+
+//getBranchName
     @Test
     void testUtilsgetSemanticVersion() {
         //def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
