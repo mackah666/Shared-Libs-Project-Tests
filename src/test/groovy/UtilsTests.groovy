@@ -54,7 +54,7 @@ class UtilsTests extends BasePipelineTest {
         def version = "1.1.1"
 
         // create mock sh step
-        helper.registerAllowedMethod('getSemanticVersion', []) { f -> return "1.1.0" }
+        helper.registerAllowedMethod('getSemanticVersion', []) { f -> return version }
 
         // call getCommitHash and check result
         def result = utils.getSemanticVersion()
