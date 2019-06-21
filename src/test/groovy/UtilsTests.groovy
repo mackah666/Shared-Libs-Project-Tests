@@ -13,16 +13,16 @@ class UtilsTests extends BasePipelineTest {
     }
 
     @Test
-    void testUtilsCall() {
-        //def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
-        def hash = "hello world"
+    void testgetCommitHash() {
+        def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
+
 
         // create mock sh step
-        helper.registerAllowedMethod('getCommitHash', []) { f -> return "2345aef" }
+        helper.registerAllowedMethod('getCommitHash', []) { f -> return hash }
 
         // call getCommitHash and check result
         def result = utils.getCommitHash()
-        assertEquals "result:", "2345aef", result
+        assertEquals "result:", hash, result
 
         //printCallStack()
         println "hello : $result"
@@ -30,7 +30,7 @@ class UtilsTests extends BasePipelineTest {
     }
 
     @Test
-    void testUtilsgetBranchName() {
+    void testgetBranchName() {
         //def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
         def branch = "develop"
 
@@ -49,7 +49,7 @@ class UtilsTests extends BasePipelineTest {
 
 //getBranchName
     @Test
-    void testUtilsgetSemanticVersion() {
+    void testgetSemanticVersion() {
         //def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
         def version = "1.1.0"
 
@@ -66,7 +66,7 @@ class UtilsTests extends BasePipelineTest {
     }
 
     @Test
-    void testUtilsHiMackahCall() {
+    void testHiMackahCall() {
         //def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
         def hash = "hello world"
 
