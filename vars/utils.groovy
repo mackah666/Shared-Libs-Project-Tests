@@ -11,6 +11,11 @@ def getCommitHash() {
     //return sh(returnStdout: true, script: "gitversion /showvariable Sha")
 }
 
+def getSemanticVersion() {
+    String fullSemVer sh(returnStdout: true, script: "gitversion /showvariable FullSemVer")
+    return fullSemVer
+}
+
 def sayHiToMackah() {
     return "hello mackah666"
 }

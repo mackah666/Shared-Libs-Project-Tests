@@ -30,6 +30,24 @@ class UtilsTests extends BasePipelineTest {
     }
 
 
+//getSemanticVersion
+    @Test
+    void testUtilsgetSemanticVersion() {
+        //def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
+        def version = "1.1.0"
+
+        // create mock sh step
+        helper.registerAllowedMethod('getSemanticVersion', []) { f -> return "1.1.0" }
+
+        // call getCommitHash and check result
+        def result = utils.getSemanticVersion()
+        assertEquals "result:", version, result
+
+        //printCallStack()
+        println "hello : $result"
+
+    }
+
     @Test
     void testUtilsHiMackahCall() {
         //def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
