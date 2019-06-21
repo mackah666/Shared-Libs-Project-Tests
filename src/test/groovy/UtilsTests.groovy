@@ -38,7 +38,7 @@ class UtilsTests extends BasePipelineTest {
         helper.registerAllowedMethod('getBranchName', []) { f -> return branch }
 
         // call getCommitHash and check result
-        def result = utils.getCommitHash()
+        def result = utils.getBranchName()
         assertEquals "result:", branch, result
 
         //printCallStack()

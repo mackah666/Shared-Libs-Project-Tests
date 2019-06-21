@@ -23,9 +23,9 @@ def call(Closure body) {
 
     stage('get branch') {
       // Test Python setup
-      script{
-        utils.getBranchName()
-      }
+      // script{
+      //   utils.getBranchName()
+      // }
       
     }
 
