@@ -23,7 +23,10 @@ def call(Closure body) {
 
     stage('get branch') {
       // Test Python setup
-      utils.getBranchName()
+      script{
+        utils.getBranchName()
+      }
+      
     }
 
     stage('Post') {
