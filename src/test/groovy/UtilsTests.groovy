@@ -8,91 +8,51 @@ class UtilsTests extends BasePipelineTest {
     @Before
     void setUp() {
         super.setUp()
-        // load getCommitHash
-        utils= loadScript("vars/utils.groovy")
+        utils = loadScript("vars/utils.groovy")
     }
 
     @Test
     void testgetCommitHash() {
         def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
-
-
-        // create mock sh step
         helper.registerAllowedMethod('getCommitHash', []) { f -> return hash }
-
-        // call getCommitHash and check result
         def result = utils.getCommitHash()
         assertEquals "result:", hash, result
-
-        //printCallStack()
-        println "hello : $result"
 
     }
 
     @Test
     void testgetBranchName() {
-        //def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
         def branch = "develop"
-
-        // create mock sh step
         helper.registerAllowedMethod('getBranchName', []) { f -> return branch }
-
-        // call getCommitHash and check result
         def result = utils.getBranchName()
         assertEquals "result:", branch, result
-
-        //printCallStack()
-        println result
 
     }
 
     @Test
     void testgetxCodeVersionForPnMVersion() {
-        //def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
-        def xcode = "10.1"
-
-        // create mock sh step
+        def xcode = "10.2"
         helper.registerAllowedMethod('getxCodeVersionForPnMVersion', [ String ]) { f -> return xcode }
-
-        // call getCommitHash and check result
-        def result = utils.getxCodeVersionForPnMVersion("2.20.1")
+        def result = utils.getxCodeVersionForPnMVersion("2.22.0")
         assertEquals "result:", xcode, result
-
-        //printCallStack()
-        println result
 
     }
 
-
-//getxCodeVersionForPnMVersion
     @Test
     void testgetSemanticVersion() {
         def version = "1.1.1"
-        // create mock sh step
         helper.registerAllowedMethod('getSemanticVersion', []) { f -> return version }
-        // call getSemanticVersion and check result
         def result = utils.getSemanticVersion()
         assertEquals "result:", version, result
-
-        //printCallStack()
-        println result
 
     }
 
     @Test
     void testHiMackahCall() {
-        //def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
         def hash = "hello world"
-
-        // create mock sh step
         helper.registerAllowedMethod('sayHiToMackah', []) { f -> return "mackah666" }
-
-        // call getCommitHash and check result
         def result = utils.sayHiToMackah()
         assertEquals "result:", "mackah666", result
-
-        //printCallStack()
-        println "hello : $result"
 
     }
 }
