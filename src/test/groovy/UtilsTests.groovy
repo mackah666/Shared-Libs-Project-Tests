@@ -46,8 +46,25 @@ class UtilsTests extends BasePipelineTest {
 
     }
 
+    @Test
+    void testgetxCodeVersionForPnMVersion() {
+        //def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
+        def xcode = "10.1"
 
-//getBranchName
+        // create mock sh step
+        helper.registerAllowedMethod('getxCodeVersionForPnMVersion', [ String ]) { f -> return xcode }
+
+        // call getCommitHash and check result
+        def result = utils.getxCodeVersionForPnMVersion("2.20.1")
+        assertEquals "result:", xcode, result
+
+        //printCallStack()
+        println result
+
+    }
+
+
+//getxCodeVersionForPnMVersion
     @Test
     void testgetSemanticVersion() {
         def version = "1.1.1"

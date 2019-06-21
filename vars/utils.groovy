@@ -29,3 +29,13 @@ def getBranchName() {
 }
 
 
+def getxCodeVersionForPnMVersion(String pnmVersion){
+	String xCodeVersion = env[pnmVersion]
+    if(!xCodeVersion) {
+        println "No match found, using default"
+        xCodeVersion = env["default"]
+    }
+    return xCodeVersion
+} 
+
+
