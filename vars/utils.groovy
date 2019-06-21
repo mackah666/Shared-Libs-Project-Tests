@@ -11,4 +11,8 @@ def getCommitHash() {
     //return sh(returnStdout: true, script: "gitversion /showvariable Sha")
 }
 
-return this
+def sayHiToMackah() {
+    return "hello mackah666"
+}
+
+
