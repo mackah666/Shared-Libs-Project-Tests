@@ -51,7 +51,7 @@ class UtilsTests extends BasePipelineTest {
     @Test
     void testgetSemanticVersion() {
         //def hash = "9ee0fbdd081d0fa9e9d40dd904309be391e0fb2b"
-        def version = "1.1.0"
+        def version = "1.1.1"
 
         // create mock sh step
         helper.registerAllowedMethod('getSemanticVersion', []) { f -> return "1.1.0" }
